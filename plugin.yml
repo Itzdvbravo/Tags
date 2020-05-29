@@ -1,0 +1,19 @@
+name: Tags
+main: Itzdvbravo\Tags\TagManager
+
+version: 0.0.1
+api: 3.12.0
+
+author: Itzdvbravo
+
+commands:
+ tag:
+  description: Open tags UI
+ givetag:
+  description: Give someone a specific or random tag
+
+permissions:
+ tag.use:
+  description: To use /tag command
+ tag.give:
+  description: To give others an item which you can interact to give tag.

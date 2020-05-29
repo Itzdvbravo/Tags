@@ -1,0 +1,11 @@
+#Follow the pattern for no erros
+#first one is tag (lower case is recommended), giving someone tags, this is needed:
+#second one is the tag perm
+#third one is the tag that will be given, you can colourize it.
+
+xd:
+  - tag.perm.xd
+  - "§f[§bXD§f]§r"
+rekt:
+  - tag.perm.rekt
+  - "[Rekt]"
