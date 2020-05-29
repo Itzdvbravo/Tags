@@ -28,14 +28,14 @@ class TagManager extends PluginBase{
         if ($this->purechat === Null){
             $this->getLogger()->critical("PureChat plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
-            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("BravoClan"));
+            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
         }
 
         $this->api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if ($this->api === Null){
             $this->getLogger()->critical("FormAPI plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
-            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("BravoClan"));
+            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
         }
     }
     /**
