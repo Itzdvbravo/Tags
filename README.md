@@ -1,4 +1,6 @@
 # Tags<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/icon.png" height="64" width="64" align="left"></img>  
+***I GOT THE PERMISSION SYSTEM IDEA FROM TITLEADR PLUGIN (OUTDATED/NOT IN POGGIT) SO THANKS TO IT.***  
+
 Add custom tags to your server using this plugin!
 
 ### Features  
