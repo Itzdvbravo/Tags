@@ -1,4 +1,4 @@
-# Tags<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/icon.png" height="64" width="64"></img>  
+# Tags<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/icon.png" height="64" width="64" align="left"></img>  
 Add custom tags to your server using this plugin!
 
 ### Features  
