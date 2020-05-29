@@ -15,9 +15,10 @@ Add custom tags to your server using this plugin!
 
 - **Creating Custom Tags**<br>
 For this go to *plugin_data/tags/config.yml* and then follow a pattern with the help of the pre-made plugins.  
-```xd:
-  - tag.perm.xd
-  - "§f[§bXD§f]§r"
+```
+  xd:
+    - tag.perm.xd
+    - "§f[§bXD§f]§r"
   ```
   The first one, **xd** is used to identify the tag/giving someone the tag using it *(recommended is in lower case with no symbols)*.  
   The second one, **tag.perm.xd** is the permission needed to use the tag.  
