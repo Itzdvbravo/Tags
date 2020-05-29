@@ -25,6 +25,8 @@ For this go to *plugin_data/tags/config.yml* and then follow a pattern with the 
   The first one, **xd** is used to identify the tag/giving someone the tag using it *(recommended is in lower case with no symbols)*.  
   The second one, **tag.perm.xd** is the permission needed to use the tag.  
   The third one, **§f[§bXD§f]§r** is what the tag will look like in the tag ui and when given to a player.  
+- **For PureChat**<br>  
+`{prefix}`, it changes the prefix of the player.
 
 ### Plugins needed to use this plugin  
 [FormApi by jojoe77777](https://poggit.pmmp.io/p/formapi)  
