@@ -11,6 +11,7 @@ use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\TextFormat;
+use UnknownOre\EnchantUI\libs\jojoe77777\FormAPI\SimpleForm;
 
 class TagManager extends PluginBase{
     public static $config;
@@ -25,15 +26,8 @@ class TagManager extends PluginBase{
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 
         $this->purechat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
-        if ($this->purechat === Null){
+        if ($this->purechat === Null) {
             $this->getLogger()->critical("PureChat plugin not found");
-            $this->getLogger()->critical("Disabling the plugin");
-            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
-        }
-
-        $this->api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-        if ($this->api === Null){
-            $this->getLogger()->critical("FormAPI plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
         }
@@ -47,7 +41,7 @@ class TagManager extends PluginBase{
         $cfg = self::$config->get($tag);
         $tagPerm = $cfg[0];
         if ($player->hasPermission($tagPerm)){
-            $player->sendMessage("§4You Already Have§r {$cfg[1]}§4 Tag");
+            $player->sendMessage(TextFormat::RED."You Already Have§r {$cfg[1]}§4 Tag");
         } else {
             $cmd = "setuperm \"{$player->getName()}\" {$tagPerm}";
             $this->getServer()->dispatchCommand(new ConsoleCommandSender(), $cmd);
@@ -134,7 +128,7 @@ class TagManager extends PluginBase{
      *@return mixed
      */
     public function openForm(Player $player){
-        $form = $this->api->createSimpleForm(function (Player $player, $data = NULL){
+        $form = new SimpleForm(function (Player $player, $data = NULL){
            if($data !== NULL) {
                $cfg = array_values(self::$config->getAll())[$data];
                $permCheck = $cfg[0];
