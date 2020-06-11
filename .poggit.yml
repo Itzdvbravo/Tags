@@ -8,4 +8,7 @@ projects:
     icon: "icon.png"
     lint:
       phpstan: false
+    libs:
+    - src: dktapps-pm-pl/pmforms/pmforms
+      version: ^1.0.0  
 ...
