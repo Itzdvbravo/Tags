@@ -6,6 +6,10 @@ api: 3.12.0
 
 author: Itzdvbravo
 
+depend:
+  - PureChat
+  - FormAPI
+
 commands:
  tag:
   description: Open tags UI
