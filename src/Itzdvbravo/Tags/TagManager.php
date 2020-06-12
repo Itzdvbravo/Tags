@@ -31,6 +31,13 @@ class TagManager extends PluginBase{
             $this->getLogger()->critical("Disabling the plugin");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
         }
+        
+        $pureperm = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
+        if ($this->purechat === Null) {
+            $this->getLogger()->critical("PurePerms plugin not found");
+            $this->getLogger()->critical("Disabling the plugin");
+            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
+        }
     }
     /**
      * @param Player $player
