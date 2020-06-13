@@ -9,6 +9,6 @@ projects:
     lint:
       phpstan: false
     libs:
-    - src: jojoe77777\FormAPI\FormAPI
+    - src: jojoe77777/FormAPI/libFormAPI
       version: ^1.0.0  
 ...
