@@ -11,7 +11,7 @@ use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\TextFormat;
-use Itzdvbravo\Tags\libs\jojoe77777\FormAPI\SimpleForm;
+use jojoe77777\FormAPI\SimpleForm;
 
 class TagManager extends PluginBase{
     public static $config;
