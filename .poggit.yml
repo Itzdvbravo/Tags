@@ -9,6 +9,6 @@ projects:
     lint:
       phpstan: false
     libs:
-    - src: dktapps-pm-pl/pmforms/pmforms
+    - src: jojoe77777\FormAPI
       version: ^1.0.0  
 ...
