@@ -1,4 +1,4 @@
-# Tags<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/icon.pn" height="64" width="64" align="left"></img>  
+# Tags<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/icon.png" height="64" width="64" align="left"></img>  
 [![Poggit](https://poggit.pmmp.io/shield.state/Tags)](https://poggit.pmmp.io/p/Tags)  
 ***I GOT THE PERMISSION SYSTEM IDEA FROM TITLEADR PLUGIN (OUTDATED/NOT IN POGGIT) SO THANKS TO IT.***  
 
