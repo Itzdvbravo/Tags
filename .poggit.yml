@@ -5,7 +5,7 @@ branches:
 projects:
   Tags:
     path: ""
-    icon: "icon.png"
+    icon: "new.png"
     lint:
       phpstan: false
     libs:
