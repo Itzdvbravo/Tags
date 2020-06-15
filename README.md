@@ -30,5 +30,4 @@ For this go to *plugin_data/tags/config.yml* and then follow a pattern with the 
 `{prefix}`, it changes the prefix of the player.
 
 ### Plugins needed to use this plugin  
-[FormApi by jojoe77777](https://poggit.pmmp.io/p/formapi)  
 [PureChat by poggit-orphanage](https://poggit.pmmp.io/p/purechat)  
