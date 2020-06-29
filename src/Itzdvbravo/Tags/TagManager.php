@@ -16,6 +16,7 @@ class TagManager extends PluginBase{
     public static $config;
     public $api;
     public $purechat;
+    public $pureperm;
 
     public function onEnable(){
         if (!file_exists($this->getDataFolder()."config.yml")) {
@@ -28,14 +29,14 @@ class TagManager extends PluginBase{
         if ($this->purechat === Null) {
             $this->getLogger()->critical("PureChat plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
-            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
+            $this->getServer()->getPluginManager()->disablePlugin($this);
         }
 
-        $pureperm = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
-        if ($pureperm === Null) {
+        $this->pureperm = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
+        if ($this->pureperm === Null) {
             $this->getLogger()->critical("PurePerms plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
-            $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
+            $this->getServer()->getPluginManager()->disablePlugin($this);
         }
     }
     /**
@@ -49,7 +50,7 @@ class TagManager extends PluginBase{
         if ($player->hasPermission($tagPerm)){
             $player->sendMessage(TextFormat::RED."You Already Have§r {$cfg[1]}§4 Tag");
         } else {
-            $this->purechat->getUserDataMgr()->setPermission($player, $tagPerm, null);
+            $this->pureperm->getUserDataMgr()->setPermission($player, $tagPerm, null);
             $player->sendMessage("§eYou have been given §r{$cfg[1]} \n§aUse /tag to equip it");
             $player->getInventory()->remove($item);
         }
@@ -68,6 +69,7 @@ class TagManager extends PluginBase{
         $nbt->setString("tag", $tag);
         $item->setNamedTag($nbt);
         $player->getInventory()->addItem($item);
+        $player->sendMessage(TextFormat::GREEN."You have gotten {$cfg[1]} ".TextFormat::GREEN."tag");
     }
 
     /**
@@ -109,7 +111,6 @@ class TagManager extends PluginBase{
                             } else {
                                 if (array_key_exists(strtolower($args[1]), self::$config->getAll())) {
                                     $this->addTag($person, $args[1]);
-                                    $person->sendMessage(TextFormat::GREEN . "You have gotten {$args[1]} tag");
                                 } else {
                                     $player->sendMessage(TextFormat::GOLD . "Tag doesn't exist");
                                 }
