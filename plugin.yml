@@ -14,7 +14,7 @@ commands:
   description: Give someone a specific or random tag
 
 permissions:
- tag.use:
+ tags.use:
   description: To use /tag command
- tag.give:
+ tags.give:
   description: To give others an item which you can interact to give tag.
