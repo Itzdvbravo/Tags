@@ -9,7 +9,6 @@ use pocketmine\command\Command;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\utils\Config;
-use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\TextFormat;
 use jojoe77777\FormAPI\SimpleForm;
 
@@ -31,9 +30,9 @@ class TagManager extends PluginBase{
             $this->getLogger()->critical("Disabling the plugin");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
         }
-        
+
         $pureperm = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
-        if ($this->purechat === Null) {
+        if ($pureperm === Null) {
             $this->getLogger()->critical("PurePerms plugin not found");
             $this->getLogger()->critical("Disabling the plugin");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("Tags"));
@@ -50,8 +49,7 @@ class TagManager extends PluginBase{
         if ($player->hasPermission($tagPerm)){
             $player->sendMessage(TextFormat::RED."You Already Have§r {$cfg[1]}§4 Tag");
         } else {
-            $cmd = "setuperm \"{$player->getName()}\" {$tagPerm}";
-            $this->getServer()->dispatchCommand(new ConsoleCommandSender(), $cmd);
+            $this->purechat->getUserDataMgr()->setPermission($player, $tagPerm, null);
             $player->sendMessage("§eYou have been given §r{$cfg[1]} \n§aUse /tag to equip it");
             $player->getInventory()->remove($item);
         }
@@ -99,7 +97,7 @@ class TagManager extends PluginBase{
                 } else {
                     $player->sendMessage(TextFormat::RED."Insufficient permission");
                 }
-            break;
+                break;
             case "givetag":
                 if ($player->hasPermission("tag.give")){
                     if (!empty($args[0])) {
@@ -136,18 +134,18 @@ class TagManager extends PluginBase{
      */
     public function openForm(Player $player){
         $form = new SimpleForm(function (Player $player, $data = NULL){
-           if($data !== NULL) {
-               $cfg = array_values(self::$config->getAll())[$data];
-               $permCheck = $cfg[0];
-               $tag = $cfg[1];
-               $realTag = " {$tag} ";
-               if ($player->hasPermission($permCheck)){
-                   $this->purechat->setPrefix($realTag, $player);
-                   $player->sendMessage("§aTag Changed To§r {$cfg[1]}");
-               } else{
-                   $player->sendMessage("§4You don't have permission to use this tag");
-               }
-           }
+            if($data !== NULL) {
+                $cfg = array_values(self::$config->getAll())[$data];
+                $permCheck = $cfg[0];
+                $tag = $cfg[1];
+                $realTag = " {$tag} ";
+                if ($player->hasPermission($permCheck)){
+                    $this->purechat->setPrefix($realTag, $player);
+                    $player->sendMessage("§aTag Changed To§r {$cfg[1]}");
+                } else{
+                    $player->sendMessage("§4You don't have permission to use this tag");
+                }
+            }
         });
         $form->setTitle("§aTags");
         $form->setContent("§eChoose Your Tag");
