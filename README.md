@@ -4,6 +4,8 @@
 
 Add custom tags to your server using this plugin!
 
+![Form](https://github.com/Itzdvbravo/Tags/blob/master/pics/form.PNG)
+
 ### Features  
 - [x] Unlimited tags.
 - [x] Permissions i.e locked/unlocked tags.
