@@ -4,8 +4,8 @@
 #third one is the tag that will be given, you can colourize it.
 
 xd:
-  - tag.perm.xd
+  - tags.perm.xd
   - "§f[§bXD§f]§r"
 rekt:
-  - tag.perm.rekt
+  - tags.perm.rekt
   - "[Rekt]"
