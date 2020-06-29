@@ -4,7 +4,7 @@
 
 Add custom tags to your server using this plugin!
 
-![Form](https://raw.githubusercontent.com/Itzdvbravo/Tags/master/pics/form.png)
+![Form]<img src="https://raw.githubusercontent.com/Itzdvbravo/Tags/master/pics/form.png" height="300" width="300"</img>
 
 ### Features  
 - [x] Unlimited tags.
