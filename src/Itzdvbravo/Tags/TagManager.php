@@ -101,7 +101,7 @@ class TagManager extends PluginBase{
                 }
                 break;
             case "givetag":
-                if ($player->hasPermission("tag.give")){
+                if ($player->hasPermission("tags.give")){
                     if (!empty($args[0])) {
                         $person = Server::getInstance()->getPlayer($args[0]);
                         if ($person !== Null) {
