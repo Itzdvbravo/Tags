@@ -90,7 +90,7 @@ class TagManager extends PluginBase{
     public function onCommand(CommandSender $player, Command $cmd, string $label, array $args): bool{
         switch ($cmd->getName()){
             case "tag":
-                if ($player->hasPermission("tag.use")) {
+                if ($player->hasPermission("tags.use")) {
                     if ($player instanceof Player) {
                         $this->openForm($player);
                     } else {
