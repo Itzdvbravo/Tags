@@ -10,8 +10,10 @@ depend: [PureChat, PurePerms]
 commands:
  tag:
   description: Open tags UI
+  permission: tags.use
  givetag:
   description: Give someone a specific or random tag
+  permission: tags.give
 
 permissions:
  tags.use:
